@@ -23,7 +23,7 @@ accuracy_list = {1:90.01, 1835:38.33, 2581:90.68, 3894:77.93, 9987:89.12, 12384:
 MAX = 1000
 DEVICE = torch.device("cuda")
 BATCH_SIZE = 1001
-ARCH_NUM = 1
+ARCH_NUM = 12384
 VISUALIZE = 150
 explanation_method = 0
 
