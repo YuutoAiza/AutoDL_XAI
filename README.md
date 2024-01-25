@@ -9,6 +9,14 @@
 &nbsp; This code is This code is used to verify the explainability of models created with Auto ML.
 Note that this code contains quotes from [ADCC], [AutoDL-Projects] and [pytorch-grad-cam].
 
+## Implementation
+In a terminal, implement the following.
+```
+python main_cifar10_autodl.py
+```
+When finished, a class activation map and metrics are generated in the directory arch_12384.
+
+
 ## Outline step
 
 1. Create a 10-classification model of cifar-10 using the NAS method provided in [AutoDL-Projects].
