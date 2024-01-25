@@ -118,6 +118,10 @@ def main(IMAGE_NUM):
     arch = torch.load(pretrained_model)
     arch = arch.to(DEVICE)
     
+    arch_path = "./arch_ResNet_110"
+    if os.path.isdir(arch_path) == False:
+        os.mkdir(arch_path)
+        
     # arch.eval()
     if IMAGE_NUM == MAX-1:
         print(arch)
