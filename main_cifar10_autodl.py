@@ -19,13 +19,13 @@ import torchinfo
 import os
 
 class_list = {"airplane":0, "automobile":1, "bird":2, "cat":3, "deer":4, "dog":5, "frog":6, "horse":7, "ship":8, "truck":9}
-accuracy_list = {1835:38.33, 2581:90.68, 3894:77.93, 9987:89.12, 12384:90.17, 13458:82.31, 14456:87.87, 15035:89.48, "ResNet_110":90.61}
+accuracy_list = {1:90.01, 1835:38.33, 2581:90.68, 3894:77.93, 9987:89.12, 12384:90.17, 13458:82.31, 14456:87.87, 15035:89.48, "ResNet_110":90.61}
 MAX = 1000
 DEVICE = torch.device("cuda")
 BATCH_SIZE = 1001
-ARCH_NUM = 15035
+ARCH_NUM = 1
 VISUALIZE = 150
-explanation_method = 3
+explanation_method = 0
 
 AUTO = True
 
@@ -225,6 +225,10 @@ if __name__ == '__main__':
     average_drop_sum_correct = 0
     coherency_sum_correct = 0
     correct_count = 0
+
+    arch_path = "./arch_{}".format(ARCH_NUM)
+    if os.path.isdir(arch_path) == False:
+        os.mkdir(arch_path)
 
     for i in range(0, MAX):
         print("-----------------------------{}-----------------------------".format(i))
